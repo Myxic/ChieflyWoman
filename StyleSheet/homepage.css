@@ -1,0 +1,94 @@
+*
+{
+    margin: 0%;
+    padding: 0%;
+}
+:root{
+    
+    --pc--:var(--bc--);
+    --bc--: white;
+    --position-background--:100% 60%;
+}
+
+.darkmode{
+    --pc--:var(--fc--);
+    --bc--: black;
+   
+}
+
+body
+{
+    height: 100%;
+    width: 100%;
+}
+
+.background
+{
+    width: 100%;
+    height: 100vh;
+    background: rgb(95, 67, 67);
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+
+.picBackground
+{
+    width: 95%;
+    height: 96vh;
+    background: grey;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+
+.picture
+{
+    width: 100%;
+    height: 100%;
+}
+.socialMedia
+{
+    width: 30%;
+    height: 60px;
+    position: absolute;
+    padding: 10px;
+    display: flex;
+    bottom: 15%;
+    /* gap: 2rem; */
+    background : rgba(255, 255, 255, 0.455);
+    align-items: center;
+    justify-content: space-evenly;
+   
+}
+.socialMedia a
+{
+    width: 80%;
+
+}
+.button
+{
+    width : 100px;
+    position: absolute;
+    bottom: 30%;
+    /* border-radius: 0%, 50%, 50%, 50%;  */
+}
+.button button
+{
+    width: 100%;
+    padding: 10px;
+    border-radius: 30px 30px 30px 0px;
+
+}
+.Name
+{
+    position: absolute;
+    top: 55%;
+    color: white;
+}
+.Name p
+{
+    
+    font-size: 3rem;
+    line-height: 3rem;
+}
