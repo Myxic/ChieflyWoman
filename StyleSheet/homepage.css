@@ -8,13 +8,14 @@
     --pc--:var(--bc--);
     --bc--: white;
     --fontColor--: black;
+    --toggles--: orange;
     --position-background--:100% 60%;
 }
 
 .darkmode{
     --pc--:var(--fc--);
     --bc--: black;
-   
+    --fontColor--: white; 
 }
 
 body
@@ -35,8 +36,8 @@ body
 
 .picBackground
 {
-    width: 95%;
-    height: 96vh;
+    width: 99%;
+    height: 98vh;
     background: grey;
     display: flex;
     justify-content: center;
@@ -92,4 +93,80 @@ body
     
     font-size: 3rem;
     line-height: 3rem;
+}
+
+/* day and night toogle switches */
+.togglebtn
+{
+    position: absolute;
+    /* outline: 2px solid red; */
+    top: 2%;
+    right: 5%;
+}
+input[type="radio"],
+input[type="checkbox"]#option-icon,
+input[type="checkbox"].toggle{
+    opacity: 0;
+    position: absolute;
+    /* top: -90000px; */
+    /* left: -90000px; */
+}
+/* input[type="checkbox"].toggle:focus + label::before{
+    outline: 1px solid black;
+} */
+input[type="checkbox"].toggle + label{
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+input[type="checkbox"].toggle + label::before{
+   
+    content: "";
+    width: 2em;
+    height: 1em;
+    background-color: var(--fontColor--);
+    border-radius: 1em;
+    border: 1px solid var(--bc--);
+    transition: transform 200ms ease-in-out;
+    
+}
+input[type="checkbox"].toggle + label::after{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: .2em;
+    content: "";
+    font-size: .5em;
+    color: var(--fontColor--);
+    width: 1.9em;
+    height: 1.9em;
+    /* background-color: var(--toggles--); */
+    background-color: var(--bc--);
+    border-radius: 1em;
+    transition: transform 200ms ease-in-out;
+    animation: check-fade 200ms ease-in-out reverse forwards;
+    
+}
+input[type="checkbox"].toggle:checked + label::after{
+   transform: translateX(100%); 
+   animation: check-fade 200ms ease-in-out forwards; 
+    
+}
+/* input[type="checkbox"].toggle:checked + label{
+    color: red;
+} */
+@keyframes check-fade {
+    0% { 
+        opacity:1;
+        content: "\263C";
+    }
+    50% { 
+        opacity:0;
+    }
+    100% { 
+        content: "\263D";
+        opacity: 1;
+    }
 }
